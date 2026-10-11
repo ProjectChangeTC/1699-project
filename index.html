@@ -7,123 +7,117 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <div class="announce">Complimentary shipping on orders over $150</div>
   <header>
     <div class="header-inner">
-      <a href="index.html" class="logo">
-        <img src="images/BTfpU.jpg" alt="1699 Logo">
-        1699
-      </a>
-      <button class="menu-toggle" aria-label="Menu">☰</button>
+      <button class="menu-toggle" aria-label="Menu">&#9776;</button>
       <nav>
-        <a href="index.html" class="active">Home</a>
         <a href="shop.html">Shop</a>
         <a href="heritage.html">Heritage</a>
         <a href="about.html">About</a>
-        <a href="size-guide.html">Size Guide</a>
-        <a href="contact.html">Contact</a>
       </nav>
-      <a href="cart.html" class="cart-btn">Cart <span class="cart-count">0</span></a>
+      <a href="index.html" class="logo">1699</a>
+      <div class="header-actions">
+        <a href="cart.html" class="cart-link">Cart (<span class="cart-count">0</span>)</a>
+      </div>
     </div>
   </header>
 
   <section class="hero">
-    <div class="hero-content">
-      <h1>1699</h1>
-      <p class="tagline">Wear the History. Learn the History.</p>
-      <p>Heritage streetwear for the Punjabi generation. Every design is rooted in real Sikh history — the Khalsa, the rivers, the warriors, the spirit of Chardi Kala.</p>
-      <a href="shop.html" class="btn">Shop the Drop</a>
-      <a href="heritage.html" class="btn btn-outline" style="margin-left:0.75rem;">Explore Heritage</a>
+    <img src="images/E1k30.jpg" alt="1699 — Fall/Winter 2026 lookbook">
+    <div class="hero-copy">
+      <div class="eyebrow light">Fall / Winter 2026 — The First Drop</div>
+      <h1>Wear the History.<br>Learn the History.</h1>
+      <a href="shop.html" class="btn btn-light">Shop the Collection</a>
     </div>
   </section>
 
   <section class="section">
-    <div class="section-inner">
-      <h2 class="section-title">Featured Drops</h2>
-      <div class="gold-line"></div>
-      <p class="section-subtitle">Oversized silhouettes carrying centuries of Punjabi and Sikh history. Full-back illustrations, gold foil, and stories you can wear.</p>
-      <div class="featured-drops">
-        <a href="product.html?id=1" class="featured-card">
-          <img src="images/kAILa.jpg" alt="Chamkaur Tee">
-          <div class="overlay">
-            <h3>Chamkaur 1704</h3>
-            <p>Courage against impossible odds</p>
-          </div>
-        </a>
-        <a href="product.html?id=7" class="featured-card">
-          <img src="images/gM3Xc.jpg" alt="Saragarhi Tee">
-          <div class="overlay">
-            <h3>Saragarhi 1897</h3>
-            <p>21 against thousands</p>
-          </div>
-        </a>
-        <a href="product.html?id=2" class="featured-card">
-          <img src="images/DDiC1.jpg" alt="Panj Aab Tee">
-          <div class="overlay">
-            <h3>Panj Aab</h3>
-            <p>The five rivers of Punjab</p>
-          </div>
-        </a>
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">New Arrivals</div>
+          <h2>The First Drop</h2>
+        </div>
+        <a href="shop.html" class="text-link">View All</a>
       </div>
+      <div class="product-grid" id="home-grid"></div>
     </div>
   </section>
 
-  <section class="section" style="background:var(--khalsa-blue);color:var(--cream);">
-    <div class="section-inner" style="text-align:center;">
-      <h2 style="font-size:2.5rem;color:var(--gold);">Sant Sipahi</h2>
-      <p style="max-width:700px;margin:1rem auto 1.5rem;font-size:1.15rem;">The saint-soldier ideal. Strength with compassion. Dignity with education. We present Sikh history with pride and accuracy — replacing stereotypes with the real stories of warriors, rivers, and unbroken spirit.</p>
-      <a href="heritage.html" class="btn">Read the Stories</a>
+  <section class="editorial">
+    <div class="editorial-grid">
+      <img src="images/kAILa.jpg" alt="Chamkaur 1704 — full-back print tee">
+      <div class="editorial-copy">
+        <div class="eyebrow">The Chamkaur Drop</div>
+        <h2>Courage, cut oversized.</h2>
+        <p>December 1704. A small band of Khalsa warriors holds the fort at Chamkaur Sahib against impossible odds. Our heaviest tee carries that stand in full-back gold and crimson — the saint-soldier ethos, wearable.</p>
+        <a href="product.html?id=1" class="btn">Shop Chamkaur</a>
+      </div>
     </div>
   </section>
 
   <section class="section">
-    <div class="section-inner">
-      <h2 class="section-title">Words of Bravery</h2>
-      <div class="gold-line"></div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;text-align:center;">
+    <div class="wrap">
+      <div class="section-head">
         <div>
-          <h3 class="gurmukhi" style="font-size:1.8rem;color:var(--khalsa-blue);">Deg Teg Fateh</h3>
-          <p>Victory to charity and the sword</p>
+          <div class="eyebrow">Heritage</div>
+          <h2>Every piece tells a story.</h2>
         </div>
-        <div>
-          <h3 class="gurmukhi" style="font-size:1.8rem;color:var(--khalsa-blue);">Chardi Kala</h3>
-          <p>Eternal rising spirit</p>
-        </div>
-        <div>
-          <h3 style="font-size:1.5rem;color:var(--khalsa-blue);">Bole So Nihal</h3>
-          <p>The Sikh battle cry</p>
-        </div>
+        <a href="heritage.html" class="text-link">All Stories</a>
       </div>
-      <p class="chardi-kala">ਚੜ੍ਹਦੀ ਕਲਾ</p>
+      <div class="heritage-list">
+        <article class="heritage-article">
+          <div class="era">Vaisakhi 1699</div>
+          <div>
+            <h2>Birth of the Khalsa</h2>
+            <p>At Anandpur Sahib, Guru Gobind Singh Ji created the Khalsa — the community of the pure. The Khanda became its emblem; 1699 became its year.</p>
+            <a class="shop-link" href="product.html?id=6">Shop the Khanda Tee</a>
+          </div>
+        </article>
+        <article class="heritage-article">
+          <div class="era">12 September 1897</div>
+          <div>
+            <h2>Saragarhi</h2>
+            <p>21 soldiers of the 36th Sikhs held Saragarhi fort against thousands. Every man fought to the last — one of history's greatest last stands.</p>
+            <a class="shop-link" href="product.html?id=7">Shop Saragarhi</a>
+          </div>
+        </article>
+        <article class="heritage-article">
+          <div class="era">The Land Itself</div>
+          <div>
+            <h2>Panj Aab — The Five Rivers</h2>
+            <p>Jhelum, Chenab, Ravi, Beas, Sutlej. Five rivers that named a land and nourished a civilization — flowing through every design.</p>
+            <a class="shop-link" href="product.html?id=2">Shop Panj Aab</a>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
   <footer>
     <div class="footer-inner">
-      <div>
-        <h4>1699</h4>
-        <p>Punjabi heritage streetwear. Rooted in real history. Worn with pride.</p>
+      <div class="footer-brand">
+        <a href="index.html" class="logo">1699</a>
+        <p>Heritage streetwear rooted in Punjabi and Sikh history. Wear the history. Learn the history.</p>
       </div>
       <div>
         <h4>Shop</h4>
         <a href="shop.html">All Products</a>
-        <a href="shop.html">Men’s</a>
-        <a href="shop.html">Women’s</a>
+        <a href="cart.html">Cart</a>
       </div>
       <div>
         <h4>Learn</h4>
-        <a href="heritage.html">Heritage Stories</a>
-        <a href="about.html">About the Brand</a>
+        <a href="heritage.html">Heritage</a>
+        <a href="about.html">About</a>
         <a href="size-guide.html">Size Guide</a>
       </div>
       <div>
         <h4>Connect</h4>
         <a href="contact.html">Contact</a>
-        <a href="cart.html">Cart</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      © 2026 1699 Streetwear. All designs rooted in public history. Wear the history.
-    </div>
+    <div class="footer-bottom">&copy; 2026 1699 &middot; Wear the History. Learn the History.</div>
   </footer>
   <script src="js/app.js"></script>
 </body>

@@ -1,4 +1,4 @@
-// 1699 Streetwear — App JS (products, cart, filters)
+// Panjab Life — App JS (products, cart, filters)
 
 const PRODUCTS = [
   {
@@ -228,7 +228,7 @@ function renderProductDetail() {
     if (container) container.innerHTML = '<p>Product not found. <a href="shop.html">Back to shop</a></p>';
     return;
   }
-  document.title = product.name + ' — 1699';
+  document.title = product.name + ' — Panjab Life';
   container.innerHTML = `
     <div>
       <img src="${product.image}" alt="${product.name}">
@@ -316,7 +316,7 @@ function placeOrder() {
     form.reportValidity();
     return;
   }
-  alert('Order placed! Thank you for supporting 1699. A confirmation will be sent (demo).');
+  alert('Order placed! Thank you for supporting Panjab Life. A confirmation will be sent (demo).');
   cart = [];
   saveCart();
   window.location.href = 'index.html';

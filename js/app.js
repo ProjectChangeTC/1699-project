@@ -173,7 +173,7 @@ function renderCart() {
         <img src="${item.image}" alt="${item.name}">
         <div>
           <h4>${item.name}</h4>
-          <p>Size: ${item.size}</p>
+          <div class="size-line">Size: ${item.size}</div>
           <div class="qty-controls">
             <button onclick="updateQty(${i}, -1)">−</button>
             <span>${item.qty}</span>
@@ -181,14 +181,30 @@ function renderCart() {
           </div>
         </div>
         <div class="price-col">
-          <strong>$${item.price * item.qty}</strong>
-          <button onclick="removeFromCart(${i})" style="display:block;margin-top:0.5rem;background:none;border:none;color:#c0392b;cursor:pointer;font-family:inherit;">Remove</button>
+          $${item.price * item.qty}
+          <button onclick="removeFromCart(${i})" class="remove-link">Remove</button>
         </div>
       </div>
     `;
   });
   container.innerHTML = html;
   document.getElementById('cart-total').textContent = '$' + total;
+}
+
+function productCard(p) {
+  const fit = p.gender === 'women' ? 'Women' : p.gender === 'men' ? 'Men' : 'Unisex';
+  return `
+    <div class="product-card">
+      <a href="product.html?id=${p.id}">
+        <img src="${p.image}" alt="${p.name}" loading="lazy">
+      </a>
+      <div class="product-info">
+        <h3><a href="product.html?id=${p.id}">${p.name}</a></h3>
+        <div class="product-meta">${fit} &middot; ${p.collection}</div>
+        <div class="product-price">$${p.price}</div>
+      </div>
+    </div>
+  `;
 }
 
 function renderProducts(filter = 'all') {
@@ -200,20 +216,7 @@ function renderProducts(filter = 'all') {
       p.gender === filter || p.collection.toLowerCase().includes(filter.toLowerCase()) || p.type === filter
     );
   }
-  grid.innerHTML = filtered.map(p => `
-    <div class="product-card">
-      <a href="product.html?id=${p.id}">
-        <img src="${p.image}" alt="${p.name}">
-      </a>
-      <div class="product-info">
-        <div class="product-collection">${p.collection}</div>
-        <h3><a href="product.html?id=${p.id}">${p.name}</a></h3>
-        <div class="product-meta">${p.gender === 'women' ? 'Women’s' : p.gender === 'men' ? 'Men’s' : 'Unisex'} · Oversized</div>
-        <div class="product-price">$${p.price}</div>
-        <a href="product.html?id=${p.id}" class="btn" style="width:100%;text-align:center;">View</a>
-      </div>
-    </div>
-  `).join('');
+  grid.innerHTML = filtered.map(productCard).join('');
 }
 
 function renderProductDetail() {
@@ -231,21 +234,21 @@ function renderProductDetail() {
       <img src="${product.image}" alt="${product.name}">
     </div>
     <div>
-      <div class="product-collection">${product.collection}</div>
+      <div class="eyebrow">${product.collection}</div>
       <h1>${product.name}</h1>
       <div class="price-lg">$${product.price}</div>
-      <p>${product.gender === 'women' ? 'Women’s boyfriend / cropped fit' : 'Men’s oversized heavyweight'} · 240+ GSM cotton / heavyweight fleece</p>
-      <h4 style="margin-top:1.5rem;">Select Size</h4>
+      <p style="color:var(--gray);font-size:14px;">${product.gender === 'women' ? 'Women\u2019s boyfriend / cropped fit' : 'Men\u2019s oversized heavyweight'} &middot; 240+ GSM cotton / heavyweight fleece</p>
+      <div class="size-label">Select Size</div>
       <div class="size-options" id="size-options">
         ${product.sizes.map(s => `<button class="size-btn" data-size="${s}">${s}</button>`).join('')}
       </div>
-      <button class="btn" id="add-btn" style="width:100%;margin-top:1rem;">Add to Cart</button>
+      <button class="btn" id="add-btn" style="width:100%;margin-top:24px;">Add to Cart</button>
       <div class="story-block">
         <h3>The Story Behind the Design</h3>
         <p>${product.story}</p>
-        <p style="margin-top:1rem;"><a href="heritage.html${product.heritageLink}">Read the full heritage story →</a></p>
+        <p style="margin-top:16px;"><a class="text-link" href="heritage.html${product.heritageLink}">Read the full story</a></p>
       </div>
-      <p style="margin-top:1rem;font-size:0.9rem;color:var(--gray);">Extended sizing XS–3XL. Premium heavyweight fabrics. Every piece is a wearable history lesson.</p>
+      <p style="margin-top:24px;font-size:13px;color:var(--gray);">Extended sizing XS&ndash;3XL. Premium heavyweight fabrics. Every piece is a wearable history lesson.</p>
     </div>
   `;
   let selectedSize = null;
@@ -289,6 +292,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('product-grid')) {
     renderProducts();
     initFilters();
+  }
+  const homeGrid = document.getElementById('home-grid');
+  if (homeGrid) {
+    homeGrid.innerHTML = PRODUCTS.slice(0, 4).map(productCard).join('');
   }
   if (document.getElementById('product-detail')) {
     renderProductDetail();

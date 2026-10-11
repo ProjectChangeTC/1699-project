@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart — 1699</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/BTfpU.jpg" alt="1699 Logo">
+        1699
+      </a>
+      <button class="menu-toggle" aria-label="Menu">☰</button>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="heritage.html">Heritage</a>
+        <a href="about.html">About</a>
+        <a href="size-guide.html">Size Guide</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="cart.html" class="cart-btn">Cart <span class="cart-count">0</span></a>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-inner" style="max-width:800px;">
+      <h1 class="section-title">Your Cart</h1>
+      <div class="gold-line"></div>
+      <div id="cart-items"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2rem;padding-top:1rem;border-top:2px solid var(--gold);">
+        <h2>Total</h2>
+        <h2 id="cart-total">$0</h2>
+      </div>
+      <div style="text-align:center;margin-top:2rem;">
+        <a href="checkout.html" class="btn" id="checkout-link">Proceed to Checkout</a>
+        <p style="margin-top:1rem;"><a href="shop.html">Continue Shopping</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div><h4>1699</h4></div>
+      <div><a href="shop.html">Shop</a></div>
+      <div><a href="heritage.html">Heritage</a></div>
+      <div><a href="contact.html">Contact</a></div>
+    </div>
+    <div class="footer-bottom">© 2026 1699 Streetwear</div>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>
